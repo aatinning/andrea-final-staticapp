@@ -4,39 +4,47 @@
 
 {% block content %}
 
+
 <div class="container">
+
+
+
+
   <div class="row">
-    <div class="col">
-    <h1>About the band </h1>
-    <p > By Andrea Tinning and <a href="https://en.wikipedia.org/wiki/Queen_(band)">Wikipedia</a>  </p>
+    <div class="col-8">
+      <h1>About the band </h1>
+      <p > By Andrea Tinning and <a href="https://en.wikipedia.org/wiki/Queen_(band)">Wikipedia</a>  </p>
       <p> Published {{ publish_date }} </p>
-   
+      <p> Queen are a British rock band that formed in London in 1970. Their classic line-up was Freddie Mercury (lead vocals and piano), Brian May (lead guitar and vocals), Roger Taylor (drums and vocals), and John Deacon (bass guitar). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock, into their music.</p> 
+
+      {% for member in members %}
+      <div class="card" style="width: 110 rem;">
+        <img class="card-img-top" src="assets/img/members/{{member.imagebw}}" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text"><a href="{{member.slug}}.html">{{member.name}}</a> <p>{{member.instruments}}</p> </p>
+        </div>
+      </div>
+      {% endfor %}
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-    <p> Queen are a British rock band that formed in London in 1970. Their classic line-up was Freddie Mercury (lead vocals and piano), Brian May (lead guitar and vocals), Roger Taylor (drums and vocals), and John Deacon (bass guitar). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock, into their music.
-    </p>
+  
 
     {# <a href="freddie.html)">Freddie Mercury</a> 
     <a href="brian.html)">Brian May</a> 
     <a href="roger.html)">Roger Taylor</a> 
     <a href="john.html)">John Deacon</a>  #}
-
-<ul class="list-unstyled">
-  <li class = "media">
-    {% for album in albums %}
-    <img class="mr-3" src="assets/img/discs/{{ album.image }}" alt="Generic placeholder image">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1"> {{album.title}}, {{album.year}}</h5>
-    
-    </div>
-  </li>
-</div>
-     <ul>   
-      {% endfor %}
+    <div class= "col-4"> 
+      <ul class="list-unstyled">
+        {% for album in albums %}
+        <li class = "media" style="width: 8rem;">
+          <img class="mr-3" src="assets/img/discs/{{ album.image }}" alt="Generic placeholder image">
+          <div class="media-body">
+            <h5 class="mt-0 mb-1"> {{album.title}}, {{album.year}}</h5>
+          </div>
+        </li>   
+        {% endfor %}
       </ul>
     </div>
   </div>
+ </div>
 
 {% endblock %}

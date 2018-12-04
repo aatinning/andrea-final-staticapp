@@ -3,14 +3,19 @@
 {% block content %}
 <article class="container">
   <div class="row">
-    <div class="col-sm-4 left-rail">
-  
-      {% block info %}{% endblock %}
-    </div>
     <div class="col-sm-8">
-      {% block story %}{% endblock %}
-
-    </div>
+      <h1> {{ members.name }} </h1>
+      <p>{{ members.text | safe}}</p>
+  </div>
+     <div class="col-sm-4 left-rail">
+      <img class="mr-3" src="assets/img/members/{{ members.image }}" style="width:300px;height:400px;" alt="Generic placeholder image">
+      <ul>
+      <p> <h4> Years active:</h4> {{members.tenure}} </p>
+      <p> <h4> Instruments: </h4>{{members.instruments}}</p>
+      <p><h4> Birth date: </h4> {{ members.birthdate}} </p> 
+      <p><h4> Hometown:</h4> {{members.birthplace}}</p>
+      </ul>
+      </div>
   </div>
 </article>
 {% endblock %}

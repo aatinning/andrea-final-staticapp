@@ -9,7 +9,6 @@
 /* bootstrap */
 // Option A: Include all of Bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
 // Option B: Include parts of Bootstrap
 // See https://getbootstrap.com/docs/4.1/getting-started/theming/#importing
 
@@ -21,3 +20,5 @@
 // Import partials
 @import "nav";
 @import "jumbotron";
+@import "discs";
+
