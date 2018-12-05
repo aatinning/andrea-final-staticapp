@@ -1,8 +1,9 @@
 .jumbotron-fluid {
     background: url(/assets/img/queen-band-wallpaper-thin.jpg) no-repeat center;
     background-color: black;
-    background: cover;
-    padding-top: 12rem
+    background-size: cover;
+    min-height: 360px;
+    padding-top: 8rem;
   }
   
 //   .jumbotron {
