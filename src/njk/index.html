@@ -18,7 +18,7 @@
           <div class="card" style="width: 110 rem;">
           <img class="card-img-top" src="assets/img/members/{{member.imagebw}}" alt="Card image cap">
           <div class="card-body">
-          <p class="card-text"><a href="{{member.slug}}.html">{{member.name}}</a> <p>{{member.instruments}}</p> </p>
+          <p class="card-text"><a href="{{member.slug}}.html"> <h3> {{member.name}} </h3> </a> <p>{{member.instruments}}</p> </p>
           </div>
         </div>
       </div>
@@ -26,6 +26,7 @@
       </div>
     </div>
     <div class= "col-sm-6 col-md-4"> 
+    <h1>Discography</h1>
       <ul class="list-unstyled">
         {% for album in albums %}
         <li class="media">
